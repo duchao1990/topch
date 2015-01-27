@@ -1,0 +1,79 @@
+
+<nav class="navbar navbar-default" role="navigation"id="navbar-bot" >
+  <div class="container-fluid">
+    <div class="navbar-header navbar-left" >
+      <a class="navbar-brand" href="#">
+        <img alt="Brand" src="__ADMIN__/avatars/user.jpg">
+      </a>
+      <h2 class="navbar-text">
+      	<small>
+      		TOP-CH系统
+      	</small>
+      </h2>
+    </div>
+    <ul class="nav nav-tabs navbar-left" id="nav-list">
+		<foreach name="nav" item="vo" k="key" >
+			<li role="presentation">
+					<a href='{:U("$vo[c]/$vo[v]")}'>{$vo.naviname}</a>
+			</li>
+		</foreach>
+	</ul>
+
+	<ul class="nav nav-pills navbar-right" id="right-bavbar">
+	  <li role="presentation" class="dropdown">
+	    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
+	     <img class="nav-user-photo" src="__ADMIN__/avatars/user.jpg" alt="Jason's Photo" />
+			<span class="user-info">
+				<small>欢迎光临,</small>
+				Jason
+			</span>
+			 <span class="caret"></span>
+	    </a>
+	    <ul class="dropdown-menu" role="menu">
+	     	<li><a href="#"><i class="icon-cog"></i>设置</a></li>
+			<li><a href="#"><i class="icon-user"></i>个人资料</a></li>
+			<li class="divider"></li>
+			<li><a href="#"><i class="icon-off"></i>退出</a></li>
+	    </ul>
+	  </li>
+	</ul>
+  </div>
+</nav>
+	<ol class="breadcrumb">
+	  <li>
+	  <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+	  <a href="#">{:C('navName')}</a>
+	  </li>
+	  <li><a href="#">{:C('actName')}</a></li>
+	</ol>
+<div class="navbar-left " id="chilidnav">
+	<ul id="accordion" class="accordion ">
+	<foreach name="navlist" item="v" k="key">
+		<if condition="($v['c'] eq null) AND ($v['v'] eq null)  ">
+			<li role="presentation" class="dropdown">
+				<div class="link">{$v.naviname} <i class="fa fa-chevron-down caret" style="font-size:2em;"></i></div>
+				<ul class="submenu" >
+					<foreach name="parentList" item="val">
+						<foreach name="val" item="va" k="ky">
+							<if condition="$v.naviId eq $va.parent_id ">
+								<li>
+									<a href='{:U("$va[c]/$va[v]")}' >
+									 {$va.naviname}
+									</a>
+								</li>
+							</if>
+						</foreach>
+					</foreach>
+				</ul>
+			</li>
+		<else/>
+			<li role="presentation">
+			<div class="link">
+					<a href='{:U("$v[c]/$v[v]")}'>{$v.naviname}</a>
+				<i class="fa fa-chevron-down"></i>
+			</div>
+			</li>
+		</if>
+	</foreach>
+	</ul>
+</div>

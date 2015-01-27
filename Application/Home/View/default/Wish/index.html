@@ -1,0 +1,66 @@
+<include file="Public/test"/>
+<body>
+	<textarea rows="5" cols="20" name='promsg' class="place" >这是必填项</textarea>
+	<input type="text" name="qq" />
+	<input type="text" name="email" >
+	<input type="button" class='sub' value="提交">
+	<script type="text/javascript">
+		$('.place').mouseover(function(event) {
+			if ($(this).val()=='这是必填项') {
+			$(this).text('');
+		}
+		});
+
+		$('.sub').click(function(event) {
+			var promsg=$('.place').val();
+			var qq=$('input[name="qq"]').val();
+			var email=$('input[name="email"]').val();
+			if (promsg.length>200 || promsg.length==0) {
+				alert('产品信息是必填项,且不能大于200个字符长度');
+			}else{
+				if (checkqq(qq) && checkemail(email)  ) {
+					$.ajax({
+					url: '/index.php?act=active_wish&op=prosub',
+					type: 'POST',
+					dataType: 'json',
+					data: {promsg: promsg,qq: qq,email:email},
+					success:function(data){
+						alert(data.msg);
+					}
+				})
+
+				}
+			};
+		});
+
+		function checkqq(qq){
+			if (qq.length!=0 ) {;
+				reg= /^[1-9]\d{4,8}$/;
+				if (!reg.test(qq)) {
+					alert('请填写正确的qq号');
+					return false;
+
+				}else{
+					return true;
+				};
+			}else{
+				return true;
+			}
+		}
+
+		function checkemail(email){
+			if (email.length!=0) {
+		        reg=/^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+		        if(!reg.test(email)){
+		             return false;
+		             alert('请填写正确的邮箱号');
+		        } else{
+		        	return true;
+		        }
+		    }else{
+		    	return true;
+		    }
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+@CHARSET "UTF-8";
+.body{
+	width:800px;margin:20px auto;
+}
+.htag{width:800px; margin:20px auto;}
+.pagination li .current{
+		background-color: #0066CC;
+		border-left-color:#0066CC;
+		border-top-color:#0066CC;
+		border-bottom-color:#0066CC;
+		color: #fff;
+	}
+.mar20{
+	margin: 20px;
+}

@@ -1,0 +1,59 @@
+<include file="Public/header"/>
+<body>
+    <div class="body" >
+	<table class="table">
+		<caption>清单</caption>
+		<thead>
+			<tr>
+				<th>产品</th>
+				<th>付款日期</th>
+				<th>状态</th>
+			</tr>
+			<tr>
+				<td><input  name="name" type="text" value="" class="form-control input" /></td>
+				<td><input  name="date" type="text" value="" class="form-control date"/></td>
+				<td><input  name="state" type="text" value="" class="form-control input"/></td>
+			</tr>
+		</thead>
+		<thead id="each">
+			
+		</thead>
+		<tr> <td id="page" colspan="3" align="center">{$page}</td></tr>
+	</table>
+	</div>
+	<script type="text/javascript">
+    // $('.date').datetimepicker({
+    //     format: 'yyyy-mm-dd',
+    //     language:"zh-CN",
+    //     minView:2,
+    //     autoclose:true
+    // });
+	getpage(1);
+	function getpage(n){
+		var name=$('input[name="name"]').val();
+		var date=$('input[name="date"]').val();
+		var state=$('input[name="state"]').val();
+
+		$.post("{:U('page/getajax')}", 
+			{name: name,
+			 date:date,
+			 state:state,
+			 p:n
+			},
+			function(data) {
+				$('#each').html('');
+				$('#page').html('');
+			$.each(data.list, function(index, val) {
+				$('#each').append('<tr><td>'+val.name+'</td><td>'+val.date+'</td><td>'+val.state+'</td></tr>')
+			});
+
+			$('#page').html(data.page);
+		});
+	}
+		$('.input').bind('input propertychange', function(event) {
+			getpage(1)
+		});
+
+	</script>
+</body>
+</html>

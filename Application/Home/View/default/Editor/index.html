@@ -1,0 +1,46 @@
+<include file="Public/header" />
+<link rel="stylesheet" type="text/css" href="__STATIC__/kindeditor/default/default.css">
+<script type="text/javascript" src="__STATIC__/kindeditor/kindeditor-all.js"></script>
+<script type="text/javascript" src="__STATIC__/kindeditor/zh_CN.js"></script>
+<script type="text/javascript" src="__STATIC__/kindeditor/kindeditor-min.js" ></script>
+<!-- <script type="text/javascript" src="__STATIC__/ueditor/ueditor.config.js"></script>
+<script type="text/javascript" src="__STATIC__/ueditor/ueditor.all.min.js"></script>
+<script type="text/javascript" src="__STATIC__/ueditor/umeditor.config.js"></script>
+<script type="text/javascript" src="__STATIC__/ueditor/umeditor.min.js"></script>
+<script type="text/javascript" src="__STATIC__/bootstrap/js/bootstrap-wysiwyg.js"></script> -->
+<!-- <style type="text/css">
+	 #editor {overflow:scroll; max-height:300px}
+</style> -->
+
+<body>
+  
+<div style="width:800px;margin:50px auto;">
+	<form role="form" action="{:U('editor/submit')}" method="post" name="myform">
+		<fieldset>
+			<legend>编辑器</legend>
+<!-- 			<div class="from-group">
+				<label>UE编辑器</label>
+				 <script id="container" name="content" type="text/plain">这里写你的初始化内容</script>
+			</div> -->
+			<div class="from-group" >
+				<label>kind编辑器</label>
+				<textarea id="kind" name="content" class="form-control" rows="5"></textarea>
+			</div>
+
+			<!-- <div class="btn-toolbar" data-role="editor-toolbar" data-target="#editor">
+				<label>UM编辑器</label>
+				<script type="text/plain" name="content" id="myEditor"></script>
+			</div> -->
+			<input type="submit" class="btn btn-primary" value="提交" />
+		</fieldset>
+	</form>
+</div>
+<script type="text/javascript">
+		KindEditor.ready(function(K) {
+			var editor = K.create('#kind', {
+				width:'100%'
+			});
+		}); 
+</script>
+</body>
+</html>
