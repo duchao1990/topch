@@ -56,7 +56,7 @@ class UserController extends Controller {
 
     public function adduser() {
         $departModel=M('department');
-        $depart=$departModel->getField('depart_Id,depart_name');
+
         if ($_POST['depart_name']) {
             $data['parent_id']=intval(I('post.parent_id'));
             $data['depart_name']=I('post.depart_name');
@@ -70,6 +70,7 @@ class UserController extends Controller {
             }
 
         }
+        $depart=$departModel->order('depart_Id')->getField('depart_Id,depart_name');
         $this->alert = parseAlert();
         $this->assign('depart',$depart);
         $this->display('add');

@@ -120,7 +120,7 @@
 
 					<div class="tab-content">
 						<div id="depart" class="tab-pane in active">
-							<form class="form-horizontal" role="form" method="post" action="<?php echo U('User/adduser');?>">
+							<form class="form-horizontal" id="addDepart" role="form" method="post" action="<?php echo U('User/adduser');?>">
 							<fieldset>
 								<legend>部门添加</legend>
 								<div class="form-group">
@@ -137,9 +137,12 @@
 								<div class="form-group">
 									<label class="col-sm-2 control-label">部门名称</label>
 									<div class="col-sm-3">
-										<input type="text" name="depart_name" class="form-control"/>
+										<div class="clearfix">
+											<input type="text" name="depart_name" class="form-control"/>
+										</div>
 									</div>
 								</div>
+								<div class="space-2"></div>
 
 								<div class="form-group">
 									<label class="col-sm-2 control-label">部门描述</label>
@@ -165,14 +168,13 @@
 						</div>
 
 						<div id="role" class="tab-pane">
-							<form class="form-horizontal" role="form">
+							<form class="form-horizontal" id="addRole" crole="form">
 							<fieldset>
 								<legend>角色添加</legend>
 								<div class="form-group">
 									<label class="col-sm-2 control-label">归属部门: </label>
 									<div class="col-sm-3">
 										<select class="form-control" name="depart_id">
-										<option value="">--无--</option>
 										<?php if(is_array($depart)): foreach($depart as $k=>$vo): ?><option value="<?php echo ($k); ?>"><?php echo ($vo); ?></option><?php endforeach; endif; ?>
 										</select>
 									</div>
@@ -181,10 +183,12 @@
 								<div class="form-group">
 									<label class="col-sm-2 control-label">角色名称</label>
 									<div class="col-sm-3">
+										<div class="clearfix">
 										<input type="text" name="roleName" class="form-control"/>
+										</div>
 									</div>
 								</div>
-
+								<div class="space-2"></div>
 								<div class="form-group">
 									<label class="col-sm-2 control-label">角色描述</label>
 									<div class="col-sm-3">
@@ -209,7 +213,7 @@
 						</div>
 
 						<div id="manger" class="tab-pane">
-							<form class="form-horizontal" role="form">
+							<form class="form-horizontal" id="addManger" role="form">
 							<fieldset>
 								<legend>成员添加</legend>
 
@@ -227,7 +231,6 @@
 									<label class="col-sm-2 control-label">归属角色: </label>
 									<div class="col-sm-3">
 										<select class="form-control" name="role_id">
-										<option value="">--无--</option>
 										<option value="1">运营</option>
 										</select>
 								</div>
@@ -236,9 +239,13 @@
 								<div class="form-group">
 									<label class="col-sm-2 control-label">用 户 名: </label>
 									<div class="col-sm-3">
+										<div class="clearfix">
 										<input type="text" name="roleName" class="form-control"/>
+										</div>
 									</div>
 								</div>
+								<div class="space-2"></div>
+
 								<div class="form-group">
 									<label class="col-sm-2 control-label">密 &nbsp;码: </label>
 									<div class="col-sm-3">
@@ -248,6 +255,7 @@
 										</div>
 									</div>
 								</div>
+								<div class="space-2"></div>
 
 								<div class="col-md-offset-2 col-md-9">
 											<button class="btn btn-info" type="button">
@@ -276,7 +284,46 @@
 	$('.nav-list .active').find('li').eq(1).addClass('active open');
 	$('.nav-list .active .active').find('li').eq(0).addClass('active');
 	//表单验证
-	
+
+	$('#addDepart').validate({
+					errorElement: 'div',
+					errorClass: 'help-block',
+					focusInvalid: false,
+					rules: {
+						depart_name: {
+							required: true,
+						},
+					},
+			
+					messages: {
+						depart_name: {
+							required: "请填写部门名称",
+						},
+					},
+			
+					invalidHandler: function (event, validator) { //display error alert on form submit   
+						$('.alert-danger', $('.login-form')).show();
+					},
+			
+					highlight: function (e) {
+						$(e).closest('.form-group').removeClass('has-info').addClass('has-error');
+					},
+			
+					success: function (e) {
+						$(e).closest('.form-group').removeClass('has-error').addClass('has-info');
+						$(e).remove();
+					},
+			
+			
+					submitHandler: function (form) {
+						 form.submit();
+					},
+					invalidHandler: function (form) {
+						form.submit(function(event) {
+							return false;
+						});
+					}
+				});
 </script>
 
 </div>
