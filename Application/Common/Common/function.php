@@ -60,3 +60,26 @@ function parseAlert() {
 
 	return $alert;
 }
+
+function jqGirdToSql($param) {
+    $op=array(
+        'cn'=>"like '%%'",//包含
+    );
+}
+// function getTree(&$data,$pid = 0,$count = 0) {
+//         if(!isset($data['odl'])){
+//                 $data=array('new'=>array(),'odl'=>$data);
+//             }
+//             foreach ($data['odl'] as $k => $v){
+//                     if($v['Pid']==$pid){
+//                             $v['Count'] = $count;
+//                             $data['new'][]=$v;
+//                             unset($data['odl'][$k]);
+//                             getTree($data,$v['Id'],$count+1);
+//                         } 
+//                     }
+//                     return $data['new'] ;
+// }
+
+
+

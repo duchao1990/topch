@@ -4,9 +4,9 @@ namespace Admin\Controller;
 use Think\Controller;
 class indexController extends Controller {
     function index() {
-        $nav['navname']='控制台';
-        $nav['navid']=1;
-        C($nav);
+    	session(null); 
+    	session('navName','控制台');
+        session('navid','1');
         $this->display();
     }
 }

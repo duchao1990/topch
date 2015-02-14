@@ -1,0 +1,789 @@
+[ 2015-02-14T08:50:28+08:00 ] 127.0.0.1 /admin.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: alert E:\myphp\TopCH\Runtime\Cache\Admin\dd023d97164b5a749e2edb2ef1228c9f.php 第 51 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.026002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.026002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2015-02-14T08:50:31+08:00 ] 127.0.0.1 /admin.php/user/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ad_user` [ RunTime:0.081004s ]
+SQL: SELECT * FROM `ad_user` WHERE `uname` = 'admin' LIMIT 1   [ RunTime:0.002001s ]
+NOTIC: [8] Undefined index: name E:\myphp\TopCH\Application\Admin\Controller\UserController.class.php 第 19 行.
+SQL: SHOW COLUMNS FROM `ad_role` [ RunTime:0.037002s ]
+SQL: SHOW COLUMNS FROM `ad_department` [ RunTime:0.033002s ]
+SQL: SELECT role.uid AS uid,role.roleid AS roleid,role.depart_id AS depart_id,role.role_name AS role_name,user.uname AS uname,user.status AS status,user.wid AS wid,user.sex AS sex,user.qq AS qq,user.address AS address,user.email AS email,user.mobile AS mobile,department.depart_name AS depart_name FROM ad_role role LEFT JOIN ad_user user ON user.uid=role.uid LEFT JOIN ad_department department ON department.depart_id=role.depart_id WHERE user.uid = '1' LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: autologin E:\myphp\TopCH\Application\Admin\Controller\UserController.class.php 第 28 行.
+NOTIC: [8] A session had already been started - ignoring session_start() E:\myphp\TopCH\ThinkPHP\Common\functions.php 第 1191 行.
+NOTIC: [8] Undefined index: role_id E:\myphp\TopCH\Application\Admin\Controller\UserController.class.php 第 40 行.
+NOTIC: [8] Undefined index: name E:\myphp\TopCH\Application\Admin\Controller\UserController.class.php 第 43 行.
+
+[ 2015-02-14T08:50:31+08:00 ] 127.0.0.1 /admin.php/index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.002000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `ad_navi` [ RunTime:0.022001s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 0 ORDER BY parent_id asc,sort_id asc  [ RunTime:0.001000s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 1 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+NOTIC: [2] Invalid argument supplied for foreach() E:\myphp\TopCH\Application\Admin\Widget\MeauWidget.class.php 第 16 行.
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 2 ORDER BY sort_id asc  [ RunTime:0.001000s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 8 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 9 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 10 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 11 ORDER BY sort_id asc  [ RunTime:0.001000s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 12 ORDER BY sort_id asc  [ RunTime:0.001000s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 3 ORDER BY sort_id asc  [ RunTime:0.001000s ]
+NOTIC: [2] Invalid argument supplied for foreach() E:\myphp\TopCH\Application\Admin\Widget\MeauWidget.class.php 第 16 行.
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 4 ORDER BY sort_id asc  [ RunTime:0.001000s ]
+NOTIC: [2] Invalid argument supplied for foreach() E:\myphp\TopCH\Application\Admin\Widget\MeauWidget.class.php 第 16 行.
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 5 ORDER BY sort_id asc  [ RunTime:0.001000s ]
+NOTIC: [2] Invalid argument supplied for foreach() E:\myphp\TopCH\Application\Admin\Widget\MeauWidget.class.php 第 16 行.
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 6 ORDER BY sort_id asc  [ RunTime:0.001000s ]
+NOTIC: [2] Invalid argument supplied for foreach() E:\myphp\TopCH\Application\Admin\Widget\MeauWidget.class.php 第 16 行.
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 7 ORDER BY sort_id asc  [ RunTime:0.001000s ]
+NOTIC: [2] Invalid argument supplied for foreach() E:\myphp\TopCH\Application\Admin\Widget\MeauWidget.class.php 第 16 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.080004s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2015-02-14T08:50:36+08:00 ] 127.0.0.1 /admin.php/user/adduser.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ad_department` [ RunTime:0.005000s ]
+SQL: SELECT `depart_Id`,`depart_name` FROM `ad_department`  [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ad_navi` [ RunTime:0.006000s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 0 ORDER BY parent_id asc,sort_id asc  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 1 ORDER BY sort_id asc  [ RunTime:0.001000s ]
+NOTIC: [2] Invalid argument supplied for foreach() E:\myphp\TopCH\Application\Admin\Widget\MeauWidget.class.php 第 16 行.
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 2 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 8 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 9 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 10 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 11 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 12 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 3 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+NOTIC: [2] Invalid argument supplied for foreach() E:\myphp\TopCH\Application\Admin\Widget\MeauWidget.class.php 第 16 行.
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 4 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+NOTIC: [2] Invalid argument supplied for foreach() E:\myphp\TopCH\Application\Admin\Widget\MeauWidget.class.php 第 16 行.
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 5 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+NOTIC: [2] Invalid argument supplied for foreach() E:\myphp\TopCH\Application\Admin\Widget\MeauWidget.class.php 第 16 行.
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 6 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+NOTIC: [2] Invalid argument supplied for foreach() E:\myphp\TopCH\Application\Admin\Widget\MeauWidget.class.php 第 16 行.
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 7 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+NOTIC: [2] Invalid argument supplied for foreach() E:\myphp\TopCH\Application\Admin\Widget\MeauWidget.class.php 第 16 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.025001s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2015-02-14T09:03:46+08:00 ] 127.0.0.1 /admin.php/Drole/deaprtadd.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ad_department` [ RunTime:0.005000s ]
+SQL: INSERT INTO `ad_department` (`parent_id`,`depart_name`,`description`) VALUES (1,' 行政中心','') [ RunTime:0.038003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ad_navi` [ RunTime:0.005001s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 0 ORDER BY parent_id asc,sort_id asc  [ RunTime:0.001000s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 1 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+NOTIC: [2] Invalid argument supplied for foreach() E:\myphp\TopCH\Application\Admin\Widget\MeauWidget.class.php 第 16 行.
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 2 ORDER BY sort_id asc  [ RunTime:0.001000s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 8 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 9 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 10 ORDER BY sort_id asc  [ RunTime:0.001000s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 11 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 12 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 3 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+NOTIC: [2] Invalid argument supplied for foreach() E:\myphp\TopCH\Application\Admin\Widget\MeauWidget.class.php 第 16 行.
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 4 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+NOTIC: [2] Invalid argument supplied for foreach() E:\myphp\TopCH\Application\Admin\Widget\MeauWidget.class.php 第 16 行.
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 5 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+NOTIC: [2] Invalid argument supplied for foreach() E:\myphp\TopCH\Application\Admin\Widget\MeauWidget.class.php 第 16 行.
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 6 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+NOTIC: [2] Invalid argument supplied for foreach() E:\myphp\TopCH\Application\Admin\Widget\MeauWidget.class.php 第 16 行.
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 7 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+NOTIC: [2] Invalid argument supplied for foreach() E:\myphp\TopCH\Application\Admin\Widget\MeauWidget.class.php 第 16 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.021001s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: depart E:\myphp\TopCH\Runtime\Cache\Admin\4e1f0ee1a12a8dbb63343fe9e6a3f60d.php 第 112 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2015-02-14T09:12:28+08:00 ] 127.0.0.1 /admin.php/Drole/deaprtadd.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ad_department` [ RunTime:0.007001s ]
+SQL: INSERT INTO `ad_department` (`parent_id`,`depart_name`,`description`) VALUES (1,' 行政中心','') [ RunTime:0.044002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ad_navi` [ RunTime:0.004001s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 0 ORDER BY parent_id asc,sort_id asc  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 1 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+NOTIC: [2] Invalid argument supplied for foreach() E:\myphp\TopCH\Application\Admin\Widget\MeauWidget.class.php 第 16 行.
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 2 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 8 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 9 ORDER BY sort_id asc  [ RunTime:0.001000s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 10 ORDER BY sort_id asc  [ RunTime:0.001000s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 11 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 12 ORDER BY sort_id asc  [ RunTime:0.001000s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 3 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+NOTIC: [2] Invalid argument supplied for foreach() E:\myphp\TopCH\Application\Admin\Widget\MeauWidget.class.php 第 16 行.
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 4 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+NOTIC: [2] Invalid argument supplied for foreach() E:\myphp\TopCH\Application\Admin\Widget\MeauWidget.class.php 第 16 行.
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 5 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+NOTIC: [2] Invalid argument supplied for foreach() E:\myphp\TopCH\Application\Admin\Widget\MeauWidget.class.php 第 16 行.
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 6 ORDER BY sort_id asc  [ RunTime:0.001000s ]
+NOTIC: [2] Invalid argument supplied for foreach() E:\myphp\TopCH\Application\Admin\Widget\MeauWidget.class.php 第 16 行.
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 7 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+NOTIC: [2] Invalid argument supplied for foreach() E:\myphp\TopCH\Application\Admin\Widget\MeauWidget.class.php 第 16 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.025002s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: depart E:\myphp\TopCH\Runtime\Cache\Admin\4e1f0ee1a12a8dbb63343fe9e6a3f60d.php 第 112 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-02-14T09:12:31+08:00 ] 127.0.0.1 /admin.php/Drole/deaprtadd.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ad_department` [ RunTime:0.005001s ]
+SQL: INSERT INTO `ad_department` (`parent_id`,`depart_name`,`description`) VALUES (1,' 行政中心','') [ RunTime:0.029001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ad_navi` [ RunTime:0.005000s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 0 ORDER BY parent_id asc,sort_id asc  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 1 ORDER BY sort_id asc  [ RunTime:0.001000s ]
+NOTIC: [2] Invalid argument supplied for foreach() E:\myphp\TopCH\Application\Admin\Widget\MeauWidget.class.php 第 16 行.
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 2 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 8 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 9 ORDER BY sort_id asc  [ RunTime:0.001001s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 10 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 11 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 12 ORDER BY sort_id asc  [ RunTime:0.001000s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 3 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+NOTIC: [2] Invalid argument supplied for foreach() E:\myphp\TopCH\Application\Admin\Widget\MeauWidget.class.php 第 16 行.
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 4 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+NOTIC: [2] Invalid argument supplied for foreach() E:\myphp\TopCH\Application\Admin\Widget\MeauWidget.class.php 第 16 行.
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 5 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+NOTIC: [2] Invalid argument supplied for foreach() E:\myphp\TopCH\Application\Admin\Widget\MeauWidget.class.php 第 16 行.
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 6 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+NOTIC: [2] Invalid argument supplied for foreach() E:\myphp\TopCH\Application\Admin\Widget\MeauWidget.class.php 第 16 行.
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 7 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+NOTIC: [2] Invalid argument supplied for foreach() E:\myphp\TopCH\Application\Admin\Widget\MeauWidget.class.php 第 16 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.022001s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: depart E:\myphp\TopCH\Runtime\Cache\Admin\4e1f0ee1a12a8dbb63343fe9e6a3f60d.php 第 112 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-02-14T09:14:03+08:00 ] 127.0.0.1 /admin.php/user/adduser.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ad_department` [ RunTime:0.005000s ]
+SQL: SELECT `depart_Id`,`depart_name` FROM `ad_department`  [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: depart_name E:\myphp\TopCH\Application\Admin\Controller\UserController.class.php 第 60 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ad_navi` [ RunTime:0.005000s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 0 ORDER BY parent_id asc,sort_id asc  [ RunTime:0.001000s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 1 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+NOTIC: [2] Invalid argument supplied for foreach() E:\myphp\TopCH\Application\Admin\Widget\MeauWidget.class.php 第 16 行.
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 2 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 8 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 9 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 10 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 11 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 12 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 3 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+NOTIC: [2] Invalid argument supplied for foreach() E:\myphp\TopCH\Application\Admin\Widget\MeauWidget.class.php 第 16 行.
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 4 ORDER BY sort_id asc  [ RunTime:0.001000s ]
+NOTIC: [2] Invalid argument supplied for foreach() E:\myphp\TopCH\Application\Admin\Widget\MeauWidget.class.php 第 16 行.
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 5 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+NOTIC: [2] Invalid argument supplied for foreach() E:\myphp\TopCH\Application\Admin\Widget\MeauWidget.class.php 第 16 行.
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 6 ORDER BY sort_id asc  [ RunTime:0.001000s ]
+NOTIC: [2] Invalid argument supplied for foreach() E:\myphp\TopCH\Application\Admin\Widget\MeauWidget.class.php 第 16 行.
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 7 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+NOTIC: [2] Invalid argument supplied for foreach() E:\myphp\TopCH\Application\Admin\Widget\MeauWidget.class.php 第 16 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.022001s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.001001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2015-02-14T09:14:33+08:00 ] 127.0.0.1 /admin.php/User/adduser.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ad_department` [ RunTime:0.008001s ]
+SQL: SELECT `depart_Id`,`depart_name` FROM `ad_department`  [ RunTime:0.001000s ]
+SQL: INSERT INTO `ad_department` (`parent_id`,`depart_name`,`description`) VALUES (1,'运营中心','网站运营部') [ RunTime:0.047002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ad_navi` [ RunTime:0.004000s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 0 ORDER BY parent_id asc,sort_id asc  [ RunTime:0.001000s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 1 ORDER BY sort_id asc  [ RunTime:0.001000s ]
+NOTIC: [2] Invalid argument supplied for foreach() E:\myphp\TopCH\Application\Admin\Widget\MeauWidget.class.php 第 16 行.
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 2 ORDER BY sort_id asc  [ RunTime:0.001000s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 8 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 9 ORDER BY sort_id asc  [ RunTime:0.001000s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 10 ORDER BY sort_id asc  [ RunTime:0.001000s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 11 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 12 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 3 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+NOTIC: [2] Invalid argument supplied for foreach() E:\myphp\TopCH\Application\Admin\Widget\MeauWidget.class.php 第 16 行.
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 4 ORDER BY sort_id asc  [ RunTime:0.001000s ]
+NOTIC: [2] Invalid argument supplied for foreach() E:\myphp\TopCH\Application\Admin\Widget\MeauWidget.class.php 第 16 行.
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 5 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+NOTIC: [2] Invalid argument supplied for foreach() E:\myphp\TopCH\Application\Admin\Widget\MeauWidget.class.php 第 16 行.
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 6 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+NOTIC: [2] Invalid argument supplied for foreach() E:\myphp\TopCH\Application\Admin\Widget\MeauWidget.class.php 第 16 行.
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 7 ORDER BY sort_id asc  [ RunTime:0.001000s ]
+NOTIC: [2] Invalid argument supplied for foreach() E:\myphp\TopCH\Application\Admin\Widget\MeauWidget.class.php 第 16 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.023001s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003000s ]
+
+[ 2015-02-14T09:16:16+08:00 ] 127.0.0.1 /admin.php/User/adduser.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ad_department` [ RunTime:0.006000s ]
+SQL: SELECT `depart_Id`,`depart_name` FROM `ad_department`  [ RunTime:0.000000s ]
+SQL: INSERT INTO `ad_department` (`parent_id`,`depart_name`,`description`) VALUES (1,'设计中心','网站产品部') [ RunTime:0.046003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ad_navi` [ RunTime:0.003000s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 0 ORDER BY parent_id asc,sort_id asc  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 1 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+NOTIC: [2] Invalid argument supplied for foreach() E:\myphp\TopCH\Application\Admin\Widget\MeauWidget.class.php 第 16 行.
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 2 ORDER BY sort_id asc  [ RunTime:0.001000s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 8 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 9 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 10 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 11 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 12 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 3 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+NOTIC: [2] Invalid argument supplied for foreach() E:\myphp\TopCH\Application\Admin\Widget\MeauWidget.class.php 第 16 行.
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 4 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+NOTIC: [2] Invalid argument supplied for foreach() E:\myphp\TopCH\Application\Admin\Widget\MeauWidget.class.php 第 16 行.
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 5 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+NOTIC: [2] Invalid argument supplied for foreach() E:\myphp\TopCH\Application\Admin\Widget\MeauWidget.class.php 第 16 行.
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 6 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+NOTIC: [2] Invalid argument supplied for foreach() E:\myphp\TopCH\Application\Admin\Widget\MeauWidget.class.php 第 16 行.
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 7 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+NOTIC: [2] Invalid argument supplied for foreach() E:\myphp\TopCH\Application\Admin\Widget\MeauWidget.class.php 第 16 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.017001s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.002000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2015-02-14T09:20:05+08:00 ] 127.0.0.1 /admin.php/user/userInfo.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ad_navi` [ RunTime:0.004000s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 0 ORDER BY parent_id asc,sort_id asc  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 1 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+NOTIC: [2] Invalid argument supplied for foreach() E:\myphp\TopCH\Application\Admin\Widget\MeauWidget.class.php 第 16 行.
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 2 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 8 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 9 ORDER BY sort_id asc  [ RunTime:0.001000s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 10 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 11 ORDER BY sort_id asc  [ RunTime:0.001000s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 12 ORDER BY sort_id asc  [ RunTime:0.001000s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 3 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+NOTIC: [2] Invalid argument supplied for foreach() E:\myphp\TopCH\Application\Admin\Widget\MeauWidget.class.php 第 16 行.
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 4 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+NOTIC: [2] Invalid argument supplied for foreach() E:\myphp\TopCH\Application\Admin\Widget\MeauWidget.class.php 第 16 行.
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 5 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+NOTIC: [2] Invalid argument supplied for foreach() E:\myphp\TopCH\Application\Admin\Widget\MeauWidget.class.php 第 16 行.
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 6 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+NOTIC: [2] Invalid argument supplied for foreach() E:\myphp\TopCH\Application\Admin\Widget\MeauWidget.class.php 第 16 行.
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 7 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+NOTIC: [2] Invalid argument supplied for foreach() E:\myphp\TopCH\Application\Admin\Widget\MeauWidget.class.php 第 16 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.039003s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: alert E:\myphp\TopCH\Runtime\Cache\Admin\77c8641503353dfe2b0965e0be90332f.php 第 48 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2015-02-14T09:20:05+08:00 ] 127.0.0.1 /admin.php/User/userList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ad_role` [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `ad_user` [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `ad_department` [ RunTime:0.003000s ]
+SQL: SELECT role.uid AS uid,role.roleid AS roleid,role.depart_id AS depart_id,role.role_name AS role_name,user.uname AS uname,user.status AS status,user.wid AS wid,user.sex AS sex,user.qq AS qq,user.address AS address,user.email AS email,user.mobile AS mobile,department.depart_name AS depart_name FROM ad_role role LEFT JOIN ad_user user ON user.uid=role.uid LEFT JOIN ad_department department ON department.depart_id=role.depart_id  [ RunTime:0.001001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2015-02-14T09:20:08+08:00 ] 127.0.0.1 /admin.php/user/adduser.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ad_department` [ RunTime:0.004000s ]
+SQL: SELECT `depart_Id`,`depart_name` FROM `ad_department`  [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: depart_name E:\myphp\TopCH\Application\Admin\Controller\UserController.class.php 第 60 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ad_navi` [ RunTime:0.003001s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 0 ORDER BY parent_id asc,sort_id asc  [ RunTime:0.001000s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 1 ORDER BY sort_id asc  [ RunTime:0.001000s ]
+NOTIC: [2] Invalid argument supplied for foreach() E:\myphp\TopCH\Application\Admin\Widget\MeauWidget.class.php 第 16 行.
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 2 ORDER BY sort_id asc  [ RunTime:0.001000s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 8 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 9 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 10 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 11 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 12 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 3 ORDER BY sort_id asc  [ RunTime:0.001000s ]
+NOTIC: [2] Invalid argument supplied for foreach() E:\myphp\TopCH\Application\Admin\Widget\MeauWidget.class.php 第 16 行.
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 4 ORDER BY sort_id asc  [ RunTime:0.001000s ]
+NOTIC: [2] Invalid argument supplied for foreach() E:\myphp\TopCH\Application\Admin\Widget\MeauWidget.class.php 第 16 行.
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 5 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+NOTIC: [2] Invalid argument supplied for foreach() E:\myphp\TopCH\Application\Admin\Widget\MeauWidget.class.php 第 16 行.
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 6 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+NOTIC: [2] Invalid argument supplied for foreach() E:\myphp\TopCH\Application\Admin\Widget\MeauWidget.class.php 第 16 行.
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 7 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+NOTIC: [2] Invalid argument supplied for foreach() E:\myphp\TopCH\Application\Admin\Widget\MeauWidget.class.php 第 16 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.023002s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-02-14T09:20:39+08:00 ] 127.0.0.1 /admin.php/User/adduser.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `ad_department` [ RunTime:0.005001s ]
+SQL: SELECT `depart_Id`,`depart_name` FROM `ad_department`  [ RunTime:0.000000s ]
+SQL: INSERT INTO `ad_department` (`parent_id`,`depart_name`,`description`) VALUES (1,'研发中心','系统研发部') [ RunTime:0.045002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ad_navi` [ RunTime:0.003000s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 0 ORDER BY parent_id asc,sort_id asc  [ RunTime:0.001000s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 1 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+NOTIC: [2] Invalid argument supplied for foreach() E:\myphp\TopCH\Application\Admin\Widget\MeauWidget.class.php 第 16 行.
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 2 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 8 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 9 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 10 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 11 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 12 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 3 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+NOTIC: [2] Invalid argument supplied for foreach() E:\myphp\TopCH\Application\Admin\Widget\MeauWidget.class.php 第 16 行.
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 4 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+NOTIC: [2] Invalid argument supplied for foreach() E:\myphp\TopCH\Application\Admin\Widget\MeauWidget.class.php 第 16 行.
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 5 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+NOTIC: [2] Invalid argument supplied for foreach() E:\myphp\TopCH\Application\Admin\Widget\MeauWidget.class.php 第 16 行.
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 6 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+NOTIC: [2] Invalid argument supplied for foreach() E:\myphp\TopCH\Application\Admin\Widget\MeauWidget.class.php 第 16 行.
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 7 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+NOTIC: [2] Invalid argument supplied for foreach() E:\myphp\TopCH\Application\Admin\Widget\MeauWidget.class.php 第 16 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.016001s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2015-02-14T09:21:14+08:00 ] 127.0.0.1 /admin.php/user/userInfo.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ad_navi` [ RunTime:0.003000s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 0 ORDER BY parent_id asc,sort_id asc  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 1 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+NOTIC: [2] Invalid argument supplied for foreach() E:\myphp\TopCH\Application\Admin\Widget\MeauWidget.class.php 第 16 行.
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 2 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 8 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 9 ORDER BY sort_id asc  [ RunTime:0.001000s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 10 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 11 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 12 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 3 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+NOTIC: [2] Invalid argument supplied for foreach() E:\myphp\TopCH\Application\Admin\Widget\MeauWidget.class.php 第 16 行.
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 4 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+NOTIC: [2] Invalid argument supplied for foreach() E:\myphp\TopCH\Application\Admin\Widget\MeauWidget.class.php 第 16 行.
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 5 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+NOTIC: [2] Invalid argument supplied for foreach() E:\myphp\TopCH\Application\Admin\Widget\MeauWidget.class.php 第 16 行.
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 6 ORDER BY sort_id asc  [ RunTime:0.001000s ]
+NOTIC: [2] Invalid argument supplied for foreach() E:\myphp\TopCH\Application\Admin\Widget\MeauWidget.class.php 第 16 行.
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 7 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+NOTIC: [2] Invalid argument supplied for foreach() E:\myphp\TopCH\Application\Admin\Widget\MeauWidget.class.php 第 16 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.035002s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: alert E:\myphp\TopCH\Runtime\Cache\Admin\77c8641503353dfe2b0965e0be90332f.php 第 48 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-02-14T09:21:14+08:00 ] 127.0.0.1 /admin.php/User/userList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ad_role` [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `ad_user` [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `ad_department` [ RunTime:0.003000s ]
+SQL: SELECT role.uid AS uid,role.roleid AS roleid,role.depart_id AS depart_id,role.role_name AS role_name,user.uname AS uname,user.status AS status,user.wid AS wid,user.sex AS sex,user.qq AS qq,user.address AS address,user.email AS email,user.mobile AS mobile,department.depart_name AS depart_name FROM ad_role role LEFT JOIN ad_user user ON user.uid=role.uid LEFT JOIN ad_department department ON department.depart_id=role.depart_id  [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2015-02-14T09:21:15+08:00 ] 127.0.0.1 /admin.php/user/adduser.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ad_department` [ RunTime:0.005000s ]
+SQL: SELECT `depart_Id`,`depart_name` FROM `ad_department`  [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: depart_name E:\myphp\TopCH\Application\Admin\Controller\UserController.class.php 第 60 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ad_navi` [ RunTime:0.004000s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 0 ORDER BY parent_id asc,sort_id asc  [ RunTime:0.001000s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 1 ORDER BY sort_id asc  [ RunTime:0.001001s ]
+NOTIC: [2] Invalid argument supplied for foreach() E:\myphp\TopCH\Application\Admin\Widget\MeauWidget.class.php 第 16 行.
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 2 ORDER BY sort_id asc  [ RunTime:0.001000s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 8 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 9 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 10 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 11 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 12 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 3 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+NOTIC: [2] Invalid argument supplied for foreach() E:\myphp\TopCH\Application\Admin\Widget\MeauWidget.class.php 第 16 行.
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 4 ORDER BY sort_id asc  [ RunTime:0.001000s ]
+NOTIC: [2] Invalid argument supplied for foreach() E:\myphp\TopCH\Application\Admin\Widget\MeauWidget.class.php 第 16 行.
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 5 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+NOTIC: [2] Invalid argument supplied for foreach() E:\myphp\TopCH\Application\Admin\Widget\MeauWidget.class.php 第 16 行.
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 6 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+NOTIC: [2] Invalid argument supplied for foreach() E:\myphp\TopCH\Application\Admin\Widget\MeauWidget.class.php 第 16 行.
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 7 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+NOTIC: [2] Invalid argument supplied for foreach() E:\myphp\TopCH\Application\Admin\Widget\MeauWidget.class.php 第 16 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.025001s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-02-14T09:58:08+08:00 ] 127.0.0.1 /admin.php/user/adduser.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ad_department` [ RunTime:0.004000s ]
+SQL: SELECT `depart_Id`,`depart_name` FROM `ad_department`  [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: depart_name E:\myphp\TopCH\Application\Admin\Controller\UserController.class.php 第 60 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ad_navi` [ RunTime:0.003000s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 0 ORDER BY parent_id asc,sort_id asc  [ RunTime:0.001000s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 1 ORDER BY sort_id asc  [ RunTime:0.002000s ]
+NOTIC: [2] Invalid argument supplied for foreach() E:\myphp\TopCH\Application\Admin\Widget\MeauWidget.class.php 第 16 行.
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 2 ORDER BY sort_id asc  [ RunTime:0.001000s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 8 ORDER BY sort_id asc  [ RunTime:0.001000s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 9 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 10 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 11 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 12 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 3 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+NOTIC: [2] Invalid argument supplied for foreach() E:\myphp\TopCH\Application\Admin\Widget\MeauWidget.class.php 第 16 行.
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 4 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+NOTIC: [2] Invalid argument supplied for foreach() E:\myphp\TopCH\Application\Admin\Widget\MeauWidget.class.php 第 16 行.
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 5 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+NOTIC: [2] Invalid argument supplied for foreach() E:\myphp\TopCH\Application\Admin\Widget\MeauWidget.class.php 第 16 行.
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 6 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+NOTIC: [2] Invalid argument supplied for foreach() E:\myphp\TopCH\Application\Admin\Widget\MeauWidget.class.php 第 16 行.
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 7 ORDER BY sort_id asc  [ RunTime:0.000000s ]
+NOTIC: [2] Invalid argument supplied for foreach() E:\myphp\TopCH\Application\Admin\Widget\MeauWidget.class.php 第 16 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.024002s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+

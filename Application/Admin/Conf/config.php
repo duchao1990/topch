@@ -14,7 +14,7 @@ return array(
     'DEFAULT_TIMEZONE'      =>  'PRC',	// 默认时区
     'DEFAULT_AJAX_RETURN'   =>  'JSON',  // 默认AJAX 数据返回格式,可选JSON XML ...
     'DEFAULT_JSONP_HANDLER' =>  'jsonpReturn', // 默认JSONP格式返回的处理方法
-    'DEFAULT_FILTER'        =>  'htmlspecialchars', // 默认参数过滤方法 用于I函数...
+    'DEFAULT_FILTER'        =>  'htmlspecialchars,addslashes', // 默认参数过滤方法 用于I函数...
 
        //数据库配置
     'DB_TYPE'   => 'mysqli', // 数据库类型
@@ -29,6 +29,7 @@ return array(
     'TMPL_PARSE_STRING' => array(
         '__STATIC__' => __ROOT__ . '/Public/static',
         '__ADMIN__' => __ROOT__ . '/Public/' . MODULE_NAME,
+        '__TABLE__' => __ROOT__ . '/Public/' . MODULE_NAME . '/Bstable',
         '__ASSETS__' => __ROOT__ . '/Public/' . MODULE_NAME . '/Assets',
         '__IMG__'    => __ROOT__ . '/Public/' . MODULE_NAME . '/images',
         '__CSS__'    => __ROOT__ . '/Public/' . MODULE_NAME . '/css',

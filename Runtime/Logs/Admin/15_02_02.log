@@ -1,0 +1,230 @@
+[ 2015-02-02T15:23:25+08:00 ] 127.0.0.1 /admin.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: alert E:\myphp\TopCH\Runtime\Cache\Admin\dd023d97164b5a749e2edb2ef1228c9f.php 第 51 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.022002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.023002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2015-02-02T15:23:27+08:00 ] 127.0.0.1 /admin.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: alert E:\myphp\TopCH\Runtime\Cache\Admin\dd023d97164b5a749e2edb2ef1228c9f.php 第 51 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2015-02-02T15:24:07+08:00 ] 127.0.0.1 /admin.php/user/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ad_user` [ RunTime:0.198011s ]
+SQL: SELECT * FROM `ad_user` WHERE `name` = 'admin' LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ad_role` [ RunTime:0.029002s ]
+SQL: SHOW COLUMNS FROM `ad_position` [ RunTime:0.022001s ]
+SQL: SHOW COLUMNS FROM `ad_department` [ RunTime:0.022001s ]
+SQL: SELECT role.uid AS uid,role.roleid AS roleid,role.positionid AS positionid,user.name AS uname,user.status AS status,user.wid AS wid,user.sex AS sex,user.address AS address,user.email AS email,user.mobile AS mobile,position.role_name AS rname,position.parent_id AS parent_id,position.departmentId AS departmentId,position.description AS description,department.name AS dname FROM ad_role role LEFT JOIN ad_user user ON user.uid=role.uid LEFT JOIN ad_position position ON position.positionId=role.positionId LEFT JOIN ad_department department ON department.departmentId=position.departmentId WHERE user.uid = '1' LIMIT 1   [ RunTime:0.002000s ]
+NOTIC: [8] Undefined index: autologin E:\myphp\TopCH\Application\Admin\Controller\UserController.class.php 第 28 行.
+NOTIC: [8] A session had already been started - ignoring session_start() E:\myphp\TopCH\ThinkPHP\Common\functions.php 第 1191 行.
+NOTIC: [8] Undefined index: role_id E:\myphp\TopCH\Application\Admin\Controller\UserController.class.php 第 40 行.
+NOTIC: [8] Undefined index: position_id E:\myphp\TopCH\Application\Admin\Controller\UserController.class.php 第 41 行.
+NOTIC: [8] Undefined index: role_name E:\myphp\TopCH\Application\Admin\Controller\UserController.class.php 第 42 行.
+NOTIC: [8] Undefined index: department_id E:\myphp\TopCH\Application\Admin\Controller\UserController.class.php 第 43 行.
+
+[ 2015-02-02T15:24:07+08:00 ] 127.0.0.1 /admin.php/index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ad_navi` [ RunTime:0.019001s ]
+SQL: SELECT * FROM `ad_navi` WHERE ( parent_id=0 ) ORDER BY sort_id  [ RunTime:0.000000s ]
+SQL: SELECT `naviId` FROM `ad_navi` WHERE ( parent_id=0 and c='' and v=''  ) ORDER BY sort_id  [ RunTime:0.001000s ]
+NOTIC: [2] Illegal string offset 'naviId' E:\myphp\TopCH\Application\Admin\Widget\MeauWidget.class.php 第 20 行.
+NOTIC: [2] Illegal string offset 'naviId' E:\myphp\TopCH\Application\Admin\Widget\MeauWidget.class.php 第 21 行.
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 2 ORDER BY sort_id  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.052003s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.023001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2015-02-02T15:24:11+08:00 ] 127.0.0.1 /admin.php/nav/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ad_navi` [ RunTime:0.003000s ]
+SQL: SELECT * FROM `ad_navi` WHERE ( parent_id=0 ) ORDER BY sort_id  [ RunTime:0.000000s ]
+SQL: SELECT `naviId` FROM `ad_navi` WHERE ( parent_id=0 and c='' and v=''  ) ORDER BY sort_id  [ RunTime:0.000000s ]
+NOTIC: [2] Illegal string offset 'naviId' E:\myphp\TopCH\Application\Admin\Widget\MeauWidget.class.php 第 20 行.
+NOTIC: [2] Illegal string offset 'naviId' E:\myphp\TopCH\Application\Admin\Widget\MeauWidget.class.php 第 21 行.
+SQL: SELECT * FROM `ad_navi` WHERE `parent_id` = 2 ORDER BY sort_id  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.024002s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2015-02-02T15:24:12+08:00 ] 127.0.0.1 /admin.php/Nav/dataList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ad_navi` [ RunTime:0.003000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ad_navi` LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `ad_navi` LIMIT 0,10   [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-02-02T15:24:41+08:00 ] 127.0.0.1 /admin.php/Nav/dataList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ad_navi` [ RunTime:0.005000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ad_navi` LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `ad_navi` LIMIT 10,10   [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2015-02-02T15:24:43+08:00 ] 127.0.0.1 /admin.php/Nav/dataList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ad_navi` [ RunTime:0.005000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ad_navi` LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `ad_navi` LIMIT 0,10   [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-02-02T15:24:45+08:00 ] 127.0.0.1 /admin.php/Nav/dataList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ad_navi` [ RunTime:0.005000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ad_navi` LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `ad_navi` LIMIT 10,10   [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-02-02T15:24:47+08:00 ] 127.0.0.1 /admin.php/Nav/dataList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ad_navi` [ RunTime:0.005000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ad_navi` LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `ad_navi` LIMIT 0,10   [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2015-02-02T15:24:48+08:00 ] 127.0.0.1 /admin.php/Nav/dataList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ad_navi` [ RunTime:0.003000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ad_navi` LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `ad_navi` LIMIT 10,10   [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2015-02-02T15:25:36+08:00 ] 127.0.0.1 /admin.php/Nav/dataList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `ad_navi` [ RunTime:0.003000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ad_navi` LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `ad_navi` LIMIT 0,10   [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+

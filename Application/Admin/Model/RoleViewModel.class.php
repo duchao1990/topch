@@ -4,9 +4,8 @@ namespace Admin\Model;
 use Think\Model\ViewModel;
 class RoleViewModel extends ViewModel {
     public $viewFields=array(
-        'role'=>array('uid', 'roleid', 'positionid', '_type'=>'LEFT'),
-        'user'=>array('name'=>'uname','status','wid','sex', 'address', 'email', 'mobile','_on'=>'user.uid=role.uid',  '_type'=>'LEFT'),
-        'position'=>array('role_name'=>'rname', 'parent_id',  'departmentId', 'description','_on'=>'position.positionId=role.positionId', '_type'=>'LEFT'),
-        'department'=>array('name'=>'dname', '_on'=>'department.departmentId=position.departmentId')
+        'role'=>array('uid', 'roleid', 'depart_id','role_name', '_type'=>'LEFT'),
+        'user'=>array('uname','status','wid','sex', 'qq','address', 'email', 'mobile','_on'=>'user.uid=role.uid',  '_type'=>'LEFT'),
+        'department'=>array('depart_name', '_on'=>'department.depart_id=role.depart_id')
     );
 }

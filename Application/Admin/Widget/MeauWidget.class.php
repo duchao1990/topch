@@ -6,25 +6,24 @@ class MeauWidget extends Controller {
     function meau() {
             $navModel=M('navi');
             //横向导航菜单
-            $where['parent_id']=0;
-            $nav=$navModel->where($where)->select();
-            $this->assign('nav',$nav);
-            //竖向导航菜单
-            $p_id=C('navid')?C('navid'):1;
-            $condition="parent_id=$p_id";
-            $list=$navModel->where($condition)->select();
-            $this->assign('navlist',$list);
-            //竖向二级菜单
-            foreach ($list as $key => $value) {
-            	$so_id=$value['naviId'];
-            	$two="parent_id=$so_id";
-            	$twoList=$navModel->where($two)->select();
-            	if ($twoList) {
-            		$parentList[$value['naviId']]=$twoList;
-            	}
-            	
+            $navWhere['parent_id']=0;
+            $nav=$navModel->where($navWhere)->order('parent_id asc,sort_id asc')->select();
+
+            foreach ($nav as $key => $value) {
+               $where['parent_id']=$value['naviId'];
+               $sonArray=$navModel->where($where)->order('sort_id asc')->select();
+               $nav[$key]['son']=$sonArray;
+               foreach ($sonArray as $k => $val) {
+                  $condition['parent_id']=$val['naviId'];
+                  $parentSon=$navModel->where($condition)->order('sort_id asc')->select();
+                  $nav[$key]['son'][$k]['son']=$parentSon;
+               }
+
             }
-            $this->assign('parentList',$parentList);
+            $this->assign('nav',$nav);
+          
+            //竖向二级
             $this->display('Meau:nav');
+
     }
 }

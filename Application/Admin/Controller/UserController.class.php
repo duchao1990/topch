@@ -10,10 +10,10 @@ class UserController extends Controller {
     function login(){
         $name=I('post.username');
         $pwd=I('post.password');
-        if (session('?ss')) {
+        if (session('?name')) {
             $this->redirect('index/index',array(),0,'');
         }elseif($_POST['username']) {
-        $where1['name']=$name;
+        $where1['uname']=$name;
         $user=M('user')->where($where1)->find();
         $pwd=createPwd($pwd,$user['salt']);
         $salt_code=salt_code($user['uid'], $user['name'], $user['salt']);
@@ -38,9 +38,8 @@ class UserController extends Controller {
                    alert('error', '没有该用户');
                } else {
                    session('role_id', $role['role_id']);
-                   session('position_id', $role['position_id']);
                    session('role_name', $role['role_name']);
-                   session('department_id', $role['department_id']);
+                   session('depar_id', $role['depart_id']);
                    session('name', $user['name']);
                    session('uid', $user['uid']);
                    $this->redirect('index/index',array(),0,'');
@@ -53,5 +52,50 @@ class UserController extends Controller {
         $this->alert = parseAlert();
         $this->display();
         }
+    }
+
+    public function adduser() {
+        $departModel=M('department');
+        $depart=$departModel->getField('depart_Id,depart_name');
+        if ($_POST['depart_name']) {
+            $data['parent_id']=intval(I('post.parent_id'));
+            $data['depart_name']=I('post.depart_name');
+            $data['description']=I('post.description');
+            $rs=$departModel->add($data);
+
+            if ($rs) {
+                alert('success', '添加成功');
+            }else {
+                alert('error', '添加失败');
+            }
+
+        }
+        $this->alert = parseAlert();
+        $this->assign('depart',$depart);
+        $this->display('add');
+    }
+
+    public function userInfo()
+    {
+
+      $this->display('userInfo');
+    }
+
+    public function userList() {
+      $d_role=D('RoleView');
+      //$where['user.uid']=$user['uid'];
+      $role=$d_role->select();
+      echo json_encode($role);
+    }
+
+    public function departList() {
+        $departModel=M('department');
+        $rs=$departModel->select();
+        $str="<select>";
+        foreach ($rs as $key => $value) {
+          $str .="<option value='{$value['depart_Id']}'>{$value['depart_name']}</option>";
+        }
+        $str.="</select>";
+        echo $str;
     }
 }
