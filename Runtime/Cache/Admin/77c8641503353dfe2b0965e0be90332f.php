@@ -69,7 +69,7 @@
 			</li>
 			<li>设置</li>
 			<li class="active">用户管理</li>
-			<li class="active">用户添加</li>
+			<li class="active">用户信息</li>
 		</ul><!-- .breadcrumb -->
 
 		<div class="nav-search" id="nav-search">
@@ -106,9 +106,6 @@
 				<table id="grid-table"></table>
 
 				<div id="grid-pager"></div>
-				<select>
-					<option></option>
-				</select>
 				<!-- PAGE CONTENT ENDS -->
 			</div><!-- /.col -->
 		</div>
@@ -149,10 +146,26 @@
 						},
 						{name:'uid',index:'uid', width:60, sorttype:"int", editable: true,editoptions:{readonly:true}},
 						{name:'uname',index:'uname',width:90, editable:true},
-						{name:'depart_name',index:'depart_name', width:150,editable: true,search:true,edittype:"select",editoptions:{dataUrl:"/admin.php/User/departList"}
+						{name:'depart_name',index:'depart_name', width:150,editable: true,search:true,edittype:"select",editoptions:{dataUrl:"/admin.php/User/departList"},dataEvents:[{type:'change',fn:function(e){
+							var str='';
+							$.ajax({
+								url: '/admin.php/User/ajaxRole',
+								type: 'POST',
+								dataType: 'json',
+								data: {actiontype: this.value},
+								success: function (data) {
+									$.each(data, function(index, val) {
+										 str +="<option value="+val.roleId+">"+val.role_name+"</option>";
+									});
+
+									var role_name=$('select#role_name');
+									role_name.append(str);
+								}
+							})
+							
+						}}]
 						},
-						{name:'role_name',index:'role_name', width:150,editable: true,edittype:"select",
-						editoptions:{value:"1:CEO;2:CFO;3:研发经理;4:人资经理"}},
+						{name:'role_name',index:'role_name', width:150,editable: true,edittype:"select",editoptions:{value: { '': ''}}},
 						{name:'status',index:'status', width:70,editable: true,edittype:"checkbox",editoptions: {value:"1:0"},unformat: aceSwitch},
 						{name:'sex',index:'sex', width:70,editable: true,edittype:"checkbox",editoptions: {value:"1:0"},unformat: aceSwitch},
 						{name:'mobile',index:'mobile', width:70},
@@ -412,8 +425,25 @@
 					$(table).find('.ui-pg-div').tooltip({container:'body'});
 				}
 			
-				//var selr = jQuery(grid_selector).jqGrid('getGridParam','selrow');
-			
+				var selr = jQuery(grid_selector).jqGrid('getGridParam','selrow');
+				function changeRole(){
+					var str='';
+							$.ajax({
+								url: '/admin.php/User/ajaxRole',
+								type: 'POST',
+								dataType: 'json',
+								data: {actiontype: this.value},
+								success: function (data) {
+									$.each(data, function(index, val) {
+										 str +="<option value="+val.roleId+">"+val.role_name+"</option>";
+									});
+
+									var role_name=$('select[name=role_name]');
+									role_name.html('');
+									role_name.append(str);
+								}
+							})
+				}
 			
 			});
 		</script>

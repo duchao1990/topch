@@ -673,8 +673,6 @@ class Model {
                 return $data;
             }
         }
-//         print_r($options);
-//         die;
         $resultSet          =   $this->db->select($options);
         if(false === $resultSet) {
             return false;

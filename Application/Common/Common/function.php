@@ -4,16 +4,17 @@
  * @param string $salt
  * @return string
  */
-function createPwd($pwd,$salt=NULL) {
-    if ($salt==null){
-        $salt=substr(implode('', shuffle(array_merge(range('a', 'z'),range('A', 'Z'),range(1, 9)))), 1,8);
-    }
+function createPwd($pwd,$salt) {
     $newPwd=md5(md5($pwd).$salt);
 
     return $newPwd;
 
 }
 
+function mysalt() {
+    $salt=substr(implode('', shuffle(array_merge(range('a', 'z'),range('A', 'Z'),range(1, 9)))), 1,8);
+    return $salt;
+}
 /**
  * @param int $uid
  * @param string $name

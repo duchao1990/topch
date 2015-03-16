@@ -56,26 +56,60 @@ class UserController extends Controller {
 
     public function adduser() {
         $departModel=M('department');
-
-        if ($_POST['depart_name']) {
+        $roleModel=M('role');
+        $userModel=M('user');
+        if ($_POST['type']=="addDepart") {
             $data['parent_id']=intval(I('post.parent_id'));
             $data['depart_name']=I('post.depart_name');
             $data['description']=I('post.description');
             $rs=$departModel->add($data);
-
             if ($rs) {
                 alert('success', '添加成功');
             }else {
                 alert('error', '添加失败');
             }
-
         }
+
+        if ($_POST['type']=="addRole") {
+            $data['depart_id']=intval(I('post.depart_id'));
+            $data['role_name']=I('post.roleName');
+            $data['description']=I('post.description');
+            $rs=$roleModel->add($data);
+            if ($rs) {
+                alert('success', '添加成功');
+            }else {
+                alert('error', '添加失败');
+            }
+        }
+
+        if ($_POST['type']=="addUser") {
+            $data['uname']=I('post.uname');
+            $data['salt']=mysalt();
+            $data['pwd']=createPwd(I('post.pwd'),$data['salt']);
+            $data['roleId']=intval(I('post.role_id'));
+            print_r($data);
+            die();
+            $rs=$userModel->add($data);
+            if ($rs) {
+                alert('success', '添加成功');
+            }else {
+                alert('error', '添加失败');
+            }
+        }
+
+
         $depart=$departModel->order('depart_Id')->getField('depart_Id,depart_name');
         $this->alert = parseAlert();
         $this->assign('depart',$depart);
         $this->display('add');
     }
+    function ajaxRole() {
+        $roleModel=M('role');
+        $where['depart_id']=I('post.departId');
+        $role=$roleModel->where($where)->select();
+        $this->ajaxReturn($role);
 
+    }
     public function userInfo()
     {
 
